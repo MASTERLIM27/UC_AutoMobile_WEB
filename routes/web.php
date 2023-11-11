@@ -36,7 +36,7 @@ Route::get('/vehicle', [VehicleController::class, 'index'])->name('vehicles.inde
 Route::get('/vehicle/create', [VehicleController::class, 'create'])->name('vehicles.create');
 Route::post('/vehicle/store', [VehicleController::class, 'store'])->name('vehicles.store');
 
-Route::apiResource('admin', CustomerController::class); 
+// Route::get('cu', CustomerController::class); 
 Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
 Route::get('/customers/create', [CustomerController::class, 'create'])->name('customers.create');
 Route::post('/customers/store', [CustomerController::class, 'store'])->name('customers.store');
