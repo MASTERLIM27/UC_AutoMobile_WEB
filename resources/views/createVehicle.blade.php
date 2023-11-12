@@ -28,27 +28,48 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <label class="input-group-text" for="inputType">Type</label>
+              <label class="input-group-text" for="type">Type</label>
             </div>
-            <select class="custom-select" id="inputType" name="inputType">
-              <option value="1">Motorcycle</option>
-              <option value="2">Car</option>
-              <option value="3">Truck</option>
+            <select class="custom-select" id="type" name="type">
+              <option value="motorcycle" selected>Motorcycle</option>
+              <option value="car">Car</option>
+              <option value="truck">Truck</option>
             </select>
           </div>
         <br>
 
-        <h3>{{request('inputType')}}</h3>
+        <h3>{{request('type')}}</h3>
+        
+        <div id="dynamicInput">
+            <!-- Dynamic input fields will be added here -->
+        </div>
+        <div id="dynamicInput2">
+            <!-- Dynamic input fields will be added here -->
+        </div>
 
-        @if (request('inputType') == "1")
-            <label for="cargo_size">Cargo Size:</label>
-            <input type="text" name="cargo_size" required>
-            <br>
-
-            <label for="fuel_capacity">Fuel Capacity:</label>
-            <input type="text" name="fuel_capacity" required>
-            <br>
-        @endif
+        <script>
+            $(document).ready(function() {
+                $('#type').change(function() {
+                    var selectedVehicle = $(this).val();
+                    var inputField = '';
+                    var inputField2 = '';
+            
+                    if (selectedVehicle == 'motorcycle') {
+                        inputField = 'Cargo Size: <input type="text" id="cargo_size" name="cargo_size">';
+                        inputField2 = 'Fuel Capacity: <input type="text" id="fuel_capacity" name="fuel_capacity">';
+                    } else if (selectedVehicle == 'car') {
+                        inputField = 'Fuel Type: <input type="text" id="fuel_type" name="fuel_type">';
+                        inputField2 = 'Trunk Space: <input type="text" id="trunk_space" name="trunk_space">';
+                    } else if (selectedVehicle == 'truck') {
+                        inputField = 'Number of Wheels: <input type="text" id="number_of_wheels" name="number_of_wheels">';
+                        inputField2 = 'Cargo Area Size: <input type="text" id="cargo_area_size" name="cargo_area_size">';
+                    }
+            
+                    $('#dynamicInput').html(inputField);
+                    $('#dynamicInput2').html(inputField2);
+                }).change();
+            });
+        </script>
 
         <button type="submit">Create Vehicle</button>
     </form>

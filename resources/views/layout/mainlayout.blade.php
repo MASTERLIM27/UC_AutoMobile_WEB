@@ -31,7 +31,8 @@
     {{-- DataTables --}}
     <link type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css" rel="stylesheet">
         
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
     <title>@yield("page_title")</title>
 </head>
 

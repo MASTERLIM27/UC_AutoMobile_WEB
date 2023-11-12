@@ -37,9 +37,6 @@
                 </td>
             </tr>
             @empty
-            <tr>
-                <td colspan="3">Tidak ada </td>
-            </tr>
         @endforelse
     </tbody>
   </table>
