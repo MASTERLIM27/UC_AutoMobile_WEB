@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <form action="{{ route('orders.update', "1") }}" method="post">
+    <form action="{{ route('orders.update', "$customer->id") }}" method="post">
         @csrf
         <input type="hidden" name="_method" value="PATCH">
         <div class="input-group mb-3">

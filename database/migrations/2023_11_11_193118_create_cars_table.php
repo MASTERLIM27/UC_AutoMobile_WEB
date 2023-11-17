@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->integer('Car_ID');
-            $table->double('fuel_type');
+            $table->string('fuel_type');
             $table->double('trunk_space');
             $table->timestamps();
         });

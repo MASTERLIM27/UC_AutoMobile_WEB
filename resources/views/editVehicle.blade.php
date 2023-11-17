@@ -77,7 +77,7 @@
                                 } else if (selectedVehicle == 'car') {
                                     @if ($vehicle->type == "car")
                                         inputField = 'Fuel Type: <input type="text" id="fuel_type" name="fuel_type" value="{{ $vehicle->car->fuel_type }}" required>';
-                                        inputField2 = 'Trunk Space: <input type="text" id="trunk_space" name="trunk_space" value="{{ $vehicle->car->fuel_type }}" required>';
+                                        inputField2 = 'Trunk Space: <input type="text" id="trunk_space" name="trunk_space" value="{{ $vehicle->car->trunk_space }}" required>';
                                     @else
                                         inputField = 'Fuel Type: <input type="text" id="fuel_type" name="fuel_type" required>';
                                         inputField2 = 'Trunk Space: <input type="text" id="trunk_space" name="trunk_space" required>';
